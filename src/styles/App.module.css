@@ -63,22 +63,26 @@
 	height: 0.8em;
 	border-radius: 100%;
 	padding: 0;
-	margin: 5px;
+	margin: 4px;
 }
 
 .dotHolder *:nth-child(1) {
-	background-color: var(--green);
+	background-color: var(--red);
 }
 .dotHolder *:nth-child(2) {
 	background-color: var(--yellow);
 }
 .dotHolder *:nth-child(3) {
-	background-color: var(--red);
+	background-color: var(--green);
+}
+
+.titleHeader {
+	transform: translate(-50%, 0);
 }
 
 .titleBar i {
 	font-size: 12px;
-	margin: 0 10px;
+	margin-right: 5px;
 }
 
 .mainContent {

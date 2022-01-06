@@ -150,14 +150,15 @@ class App extends Component {
 		return (
 			<div className={styles.window}>
 				<div className={styles.titleBar}>
-					<span>
-						<i className="fa-fw fas fa-code"></i> Promptfolio
-					</span>
 					<span className={styles.dotHolder}>
 						<span></span>
 						<span></span>
 						<span></span>
 					</span>
+					<span className={styles.titleHeader}>
+						<i className="fa-fw fas fa-code"></i> Promptfolio
+					</span>
+					<span></span>
 				</div>
 				<div ref={this.mainRef} className={styles.mainContent}>
 					{record.map(({ command, output }, index) => (

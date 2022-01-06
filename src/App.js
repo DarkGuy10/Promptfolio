@@ -92,6 +92,8 @@ class App extends Component {
 			userDataLoaded: false,
 		}
 
+		this.mainRef = createRef()
+
 		this.handleExecute = commandName => {
 			let output
 			if (!commandName) output = <></>
@@ -133,6 +135,16 @@ class App extends Component {
 		})
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		// auto scroll
+		if (prevState.record.length !== this.state.record.length)
+			this.mainRef.current.scrollTo({
+				top: this.mainRef.current.scrollHeight,
+				left: 0,
+				behavior: 'smooth',
+			})
+	}
+
 	render() {
 		const { record } = this.state
 		return (
@@ -147,7 +159,7 @@ class App extends Component {
 						<span></span>
 					</span>
 				</div>
-				<div className={styles.mainContent}>
+				<div ref={this.mainRef} className={styles.mainContent}>
 					{record.map(({ command, output }, index) => (
 						<div key={index}>
 							<span className={styles.promptPrefix}>

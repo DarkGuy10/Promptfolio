@@ -37,17 +37,17 @@
 }
 
 .titleBar {
+	position: relative;
 	background-color: var(--dark);
 	border-radius: var(--round-border-radius) var(--round-border-radius) 0 0;
 	display: flex;
 	flex: 0 0;
-	justify-content: space-between;
 	align-items: center;
 	color: var(--muted);
 	font-size: var(--font-size-header);
 	font-family: var(--font-normal);
 	font-weight: 900;
-	padding: 7px;
+	padding: 7px 10px;
 	user-select: none;
 	-webkit-user-select: none;
 }
@@ -63,7 +63,7 @@
 	height: 0.8em;
 	border-radius: 100%;
 	padding: 0;
-	margin: 4px;
+	margin: 5px;
 }
 
 .dotHolder *:nth-child(1) {
@@ -77,6 +77,8 @@
 }
 
 .titleHeader {
+	position: absolute;
+	left: 50%;
 	transform: translate(-50%, 0);
 }
 

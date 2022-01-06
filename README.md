@@ -1,6 +1,10 @@
 # Promptfolio
 
-## _A cool, responsive, terminal-like portfolio website._
+### _A cool, responsive, terminal-like portfolio website._
+
+![deployed with vercel](https://img.shields.io/badge/deployed%20with-Vercel-blue)
+
+[View deployment](https://promptfolio.vercel.app)
 
 ## Acknowledgements
 

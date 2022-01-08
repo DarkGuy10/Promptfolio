@@ -22,6 +22,7 @@
 	--font-size-header: 14px;
 	--font-size-icon: 14px;
 	--scrollbar-color-thumb: #222;
+	--responsive-transform: translate(-50%, -50%);
 }
 
 * {
@@ -67,11 +68,12 @@ a:hover {
 	text-decoration: underline;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px), (max-height: 300px) {
 	:root {
 		--font-size-regular: 12px;
 		--font-size-header: 13px;
 		--round-border-radius: 0;
 		--font-size-icon: 13px;
+		--responsive-transform: translate(0, 0);
 	}
 }

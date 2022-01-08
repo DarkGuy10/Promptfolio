@@ -11,6 +11,7 @@
 .wrapper img {
 	border-radius: 100%;
 	width: 33%;
+	max-width: 200px;
 }
 
 .content {

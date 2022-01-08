@@ -1,6 +1,7 @@
 import React from 'react'
 const github_username = 'darkguy10'
 const discord_usertag = 'HaiseSasaki#7599'
+const discord_userid = '755109987474473059'
 const email = 'harperburn@protonmail.ch'
 
 const projects = [
@@ -27,6 +28,7 @@ const links = [
 	},
 	{
 		name: 'Discord',
+		link: `https://discord.com/users/${discord_userid}`,
 		icon: 'fab fa-fw fa-discord',
 		description: `${discord_usertag} | Add me as friend!`,
 	},
@@ -62,4 +64,12 @@ const info = (
 	</>
 )
 
-export { github_username, discord_usertag, email, projects, links, info }
+export {
+	github_username,
+	discord_usertag,
+	discord_userid,
+	email,
+	projects,
+	links,
+	info,
+}

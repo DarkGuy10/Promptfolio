@@ -1,8 +1,8 @@
 # Promptfolio
 
-### _A cool, responsive, terminal-like portfolio website._
+[![GitHub](https://img.shields.io/github/license/darkguy10/promptfolio?color=blue)](https://opensource.org/licenses/MIT) ![status](https://img.shields.io/github/deployments/DarkGuy10/promptfolio/production?label=vercel&logo=vercel&logoColor=white)
 
-![deployed with vercel](https://img.shields.io/badge/deployed%20with-Vercel-blue)
+A cool, responsive, terminal-like portfolio website running on React and Node.js.
 
 [View deployment](https://promptfolio.vercel.app)
 
@@ -16,6 +16,6 @@ Theme used: ["New Moon" by @taniarascia](https://github.com/taniarascia/new-moon
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](/LICENSE).
 
-###### Made with <3 using React
+###### Made with ❤️ using ☕ and React

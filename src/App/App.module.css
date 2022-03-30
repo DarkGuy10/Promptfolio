@@ -122,44 +122,6 @@
 	color: var(--red) !important;
 }
 
-.inputWrapper {
-	display: flex;
-}
-
-.inputForm {
-	flex-grow: 1;
-	position: relative;
-}
-
-.suggested {
-	width: auto;
-	z-index: 1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: var(--muted);
-	white-space: pre;
-}
-
-.input {
-	z-index: 2;
-	display: inline;
-	width: 100%;
-	background-color: transparent;
-	font-family: var(--font-code);
-	font-size: var(--font-size-regular);
-	color: var(--light);
-	border: none;
-	outline: none;
-	text-transform: lowercase;
-	padding: 0;
-}
-
-.input:focus {
-	border: none;
-	outline: none;
-}
-
 /* Responsive code */
 @media only screen and (max-width: 700px), (max-height: 300px) {
 	.window {

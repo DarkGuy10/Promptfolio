@@ -1,34 +1,16 @@
-import React from "react";
-import styles from "./styles/commands.module.css";
-import { links, info } from "./config";
-
-const ListElement = (props) => {
-  const { icon, name, link, description, alt } = props;
-  return (
-    <div className={styles.listElement}>
-      <i className={icon}></i>{" "}
-      <strong className={alt ? styles.alt : ""}>
-        {link ? (
-          <a href={link} target={"_blank"} rel="noreferrer">
-            {name}
-          </a>
-        ) : (
-          <>{name}</>
-        )}
-      </strong>{" "}
-      <em>{description}</em>
-    </div>
-  );
-};
+import React, { Component } from "react";
+import styles from "./commands.module.css";
+import { links, info } from "../config";
+import { Commands, AppState } from "../typings";
+import ListElement from "../ListElement/ListElement";
 
 const rawCommands = [
   {
     name: "help",
     icon: "fas fa-fw fa-question-circle",
     description: "List down all available commands",
-    execute(app) {
+    execute(app: Component<any, AppState>) {
       const { commands } = app.state;
-      console.log(commands.values());
       return (
         <>
           Available commands:
@@ -38,7 +20,7 @@ const rawCommands = [
               icon={icon}
               name={name}
               description={description}
-              alt
+              help
             />
           ))}
         </>
@@ -49,7 +31,7 @@ const rawCommands = [
     name: "info",
     icon: "fas fa-fw fa-info-circle",
     description: "Show information about me",
-    execute(app) {
+    execute(app: Component<any, AppState>) {
       const { userDataLoaded, userData } = app.state;
       if (!userDataLoaded)
         return <>promptfolio: user data could not be fetched</>;
@@ -81,21 +63,23 @@ const rawCommands = [
     name: "projects",
     icon: "fas fa-fw fa-tools",
     description: "Display a list of my major projects",
-    execute(app) {
+    execute(app: Component<any, AppState>) {
       const { projectDataLoaded, projectData } = app.state;
       if (!projectDataLoaded)
         return <>promptfolio: project data could not be fetched</>;
       return (
         <>
-          {projectData.map(({ name, html_url, description }, key) => (
-            <ListElement
-              key={key}
-              icon={"fab fa-fw fa-github-alt"}
-              name={name}
-              link={html_url}
-              description={description}
-            />
-          ))}
+          {projectData.map(
+            ({ name, html_url, description }: any, key: number) => (
+              <ListElement
+                key={key}
+                icon={"fab fa-fw fa-github-alt"}
+                name={name}
+                link={html_url}
+                description={description}
+              />
+            )
+          )}
         </>
       );
     },
@@ -124,7 +108,7 @@ const rawCommands = [
     name: "clear",
     icon: "fas fa-fw fa-eraser",
     description: "Clear terminal screen",
-    execute(app) {
+    execute(app: Component<any, AppState>) {
       app.setState({
         ...app.state,
         record: [],
@@ -132,5 +116,6 @@ const rawCommands = [
     },
   },
 ];
-const commands = new Map(rawCommands.map((cmd) => [cmd.name, cmd]));
+const commands: Commands = new Map(rawCommands.map((cmd) => [cmd.name, cmd]));
+
 export default commands;

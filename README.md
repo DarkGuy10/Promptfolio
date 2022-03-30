@@ -12,7 +12,7 @@ Theme used: ["New Moon" by @taniarascia](https://github.com/taniarascia/new-moon
 
 ## Author
 
--   [DarkGuy10](https://github.com/DarkGuy10)
+- [DarkGuy10](https://github.com/DarkGuy10)
 
 ## License
 

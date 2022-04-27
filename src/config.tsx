@@ -42,25 +42,25 @@ const links = [
 
 const info = (
 	<>
-		<span>Yo! I'm a highschooler who codes as a hobby.</span>
-		<span>
+		<p>Yo! I'm a highschooler who codes as a hobby.</p>
+		<p>
 			I've got intermediate experience with{' '}
 			<span className="highlighted">JavaScript</span> and{' '}
 			<span className="highlighted">Node.js</span>.
-		</span>
-		<span>
+		</p>
+		<p>
 			I've been doing{' '}
 			<span className="highlighted">front-end web designing</span> as a
 			fun pastime for a couple of years now. Currently, I'm learning{' '}
 			<span className="highlighted">React</span> and{' '}
 			<span className="highlighted">Next.js</span>
-		</span>
-		<span>
+		</p>
+		<p>
 			Aside from that, I have basic knowledge of{' '}
 			<span className="highlighted">python</span>,{' '}
 			<span className="highlighted">java</span> and{' '}
 			<span className="highlighted">shell scripting.</span>
-		</span>
+		</p>
 	</>
 )
 

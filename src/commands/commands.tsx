@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './commands.module.css'
+import styles from './commands.module.scss'
 import { links, info } from '../config'
 import { Commands, Command } from '../typings'
 import ListElement from '../ListElement/ListElement'
@@ -39,24 +39,30 @@ const rawCommands: Command[] = [
 				return <>promptfolio: user data could not be fetched</>
 			const { avatar_url, login, name, bio } = userData
 			return (
-				<div className={styles.wrapper}>
-					<img src={avatar_url} alt="GitHub avatar" />
-					<div className={styles.content}>
-						<div className={styles.header}>
-							<span className={styles.headerInner}>
+				<div className={styles.infoWrapper}>
+					<div className={styles.infoInner}>
+						<img
+							src={avatar_url}
+							className={styles.avatar}
+							alt="GitHub avatar"
+						/>
+						<div className={styles.content}>
+							<div className={styles.header}>
 								<strong>{name}</strong>{' '}
 								<span className="muted">@{login}</span>
-							</span>
-							<span className={styles.icons}>
-								<i className="fab fa-fw fa-react"></i>
-								<i className="fab fa-fw fa-js-square"></i>
-								<i className="fab fa-fw fa-node-js"></i>
-								<i className="fab fa-fw fa-python"></i>
-								<i className="fab fa-fw fa-java"></i>
-							</span>
+							</div>
+							<em className={styles.bio}>"...{bio}"</em>
+							<div className={styles.info}>{info}</div>
 						</div>
-						<em>"...{bio}"</em>
-						<div className={styles.info}>{info}</div>
+					</div>
+
+					<div className={styles.icons}>
+						<i className="fab fa-fw fa-react"></i>
+						<i className="fab fa-fw fa-sass"></i>
+						<i className="fab fa-fw fa-js-square"></i>
+						<i className="fab fa-fw fa-node-js"></i>
+						<i className="fab fa-fw fa-python"></i>
+						<i className="fab fa-fw fa-java"></i>
 					</div>
 				</div>
 			)

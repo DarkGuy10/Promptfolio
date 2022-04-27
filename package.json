@@ -44,6 +44,7 @@
 	"packageManager": "yarn@3.2.0",
 	"devDependencies": {
 		"prettier": "^2.6.1",
+		"sass": "^1.51.0",
 		"typescript-plugin-css-modules": "^3.4.0"
 	}
 }

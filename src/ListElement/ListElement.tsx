@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListElementProps } from '../typings'
-import styles from './ListElement.module.css'
+import styles from './ListElement.module.scss'
 
 const ListElement = (props: ListElementProps) => {
 	const { icon, name, link, description, help } = props

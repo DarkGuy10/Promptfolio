@@ -1,3 +1,5 @@
+@use './../base';
+
 .inputWrapper {
 	display: flex;
 }
@@ -13,7 +15,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	color: var(--muted);
+	color: base.$muted;
 	white-space: pre;
 }
 
@@ -22,28 +24,28 @@
 	display: inline;
 	width: 100%;
 	background-color: transparent;
-	font-family: var(--font-code);
+	font-family: base.$font-code;
 	font-size: var(--font-size-regular);
-	color: var(--light);
+	color: base.$light;
 	border: none;
 	outline: none;
 	text-transform: lowercase;
 	padding: 0;
-}
 
-.input:focus {
-	border: none;
-	outline: none;
+	&:focus {
+		border: none;
+		outline: none;
+	}
 }
 
 .promptPrefix span:nth-of-type(1) {
-	color: var(--blue);
+	color: base.$blue;
 }
 
 .promptPrefix span:nth-of-type(2) {
-	color: var(--light-yellow);
+	color: base.$light-yellow;
 }
 
 .validCommand {
-	color: var(--green) !important;
+	color: base.$green !important;
 }

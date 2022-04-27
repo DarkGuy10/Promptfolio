@@ -1,5 +1,5 @@
 import React, { Component, createRef, RefObject } from 'react'
-import styles from './App.module.css'
+import styles from './App.module.scss'
 import commands from '../commands/commands'
 import { projects, github_username } from '../config'
 import { AppState } from '../typings'
@@ -7,7 +7,7 @@ import InputManager from '../InputManager/InputManager'
 
 class App extends Component<{}, AppState> {
 	mainRef: RefObject<any>
-	handleExecute: (commandName: string) => void
+	handleExecute: (arg: string) => void
 
 	constructor(props: any) {
 		super(props)
@@ -20,8 +20,9 @@ class App extends Component<{}, AppState> {
 
 		this.mainRef = createRef()
 
-		this.handleExecute = commandName => {
+		this.handleExecute = arg => {
 			const { commands } = this.state
+			const commandName = arg.trim()
 			let output
 			if (!commandName) output = <></>
 			else if (!commands.has(commandName))
@@ -78,39 +79,40 @@ class App extends Component<{}, AppState> {
 	render() {
 		const { record } = this.state
 		return (
-			<div className={styles.window}>
-				<div className={styles.titleBar}>
-					<span className={styles.dotHolder}>
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-					<span className={styles.titleHeader}>
-						<i className="fa-fw fas fa-code"></i> Promptfolio
-					</span>
-					<span></span>
-				</div>
-				<div ref={this.mainRef} className={styles.mainContent}>
-					{record.map(({ command, output }, index) => (
-						<div key={index}>
-							<span className={styles.promptPrefix}>
-								<span>{github_username}</span>@
-								<span>promptfolio:</span>
-								~${' '}
-								<span
-									className={
-										commands.has(command)
-											? styles.validCommand
-											: styles.invalidCommand
-									}
-								>
-									{command}
-								</span>
-							</span>
-							<div>{output}</div>
+			<div className={styles.wrapper}>
+				<div className={styles.window}>
+					<div className={styles.titleBar}>
+						<div className={styles.dotHolder}>
+							<div className={styles.dot}></div>
+							<div className={styles.dot}></div>
+							<div className={styles.dot}></div>
 						</div>
-					))}
-					<InputManager handleExecute={this.handleExecute} />
+						<div className={styles.titleHeader}>
+							<i className="fa-fw fas fa-code"></i> Promptfolio
+						</div>
+					</div>
+					<div ref={this.mainRef} className={styles.mainContent}>
+						{record.map(({ command, output }, index) => (
+							<div key={index}>
+								<span className={styles.promptPrefix}>
+									<span>{github_username}</span>@
+									<span>promptfolio:</span>
+									~${' '}
+									<span
+										className={
+											commands.has(command)
+												? styles.validCommand
+												: styles.invalidCommand
+										}
+									>
+										{command}
+									</span>
+								</span>
+								<div>{output}</div>
+							</div>
+						))}
+						<InputManager handleExecute={this.handleExecute} />
+					</div>
 				</div>
 			</div>
 		)

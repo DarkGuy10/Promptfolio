@@ -2,7 +2,7 @@ import React, { Component, RefObject, createRef } from 'react'
 import commands from '../commands/commands'
 import { github_username } from '../config'
 import { InputManagerState } from '../typings'
-import styles from './InputManager.module.css'
+import styles from './InputManager.module.scss'
 
 class InputManager extends Component<
 	{ handleExecute: (commandName: string) => void },
@@ -69,16 +69,20 @@ class InputManager extends Component<
 						}}
 						onInput={event => {
 							const target = event.target as HTMLInputElement
-							const value = target.value.toLowerCase().trim()
+
+							// value is trimmed, but event.target.value isnt
+							const value = target.value.trimStart().toLowerCase()
+
 							let suggestedValue = ''
 							if (value)
 								for (const cmd of commands.values())
 									if (cmd.name.startsWith(value)) {
 										suggestedValue =
-											' '.repeat(value.length) +
+											' '.repeat(target.value.length) +
 											cmd.name.substring(value.length)
 										break
 									}
+
 							this.setState({
 								value: value,
 								suggestedValue: suggestedValue,

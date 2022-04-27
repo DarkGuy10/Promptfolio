@@ -45,7 +45,9 @@ class InputManager extends Component<
 					</span>
 					<input
 						className={`${styles.input} ${
-							commands.has(value) ? styles.validCommand : ''
+							commands.has(value.trim())
+								? styles.validCommand
+								: ''
 						}`}
 						spellCheck={false}
 						placeholder="confused? type help and hit enter to get started!"

@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-type AppState = {
+export type AppState = {
 	record: Array<{ command: string; output: JSX.Element }>
 	commands: Map<string, Command>
 	projectDataLoaded: boolean
@@ -9,12 +9,12 @@ type AppState = {
 	userData?: any
 }
 
-type InputManagerState = {
+export type InputManagerState = {
 	value: string
 	suggestedValue: string
 }
 
-type ListElementProps = {
+export type ListElementProps = {
 	icon: string
 	name: string
 	link?: string
@@ -22,13 +22,11 @@ type ListElementProps = {
 	help?: boolean
 }
 
-type Command = {
+export type Command = {
 	name: string
 	icon: string
 	description: string
 	execute(app: Component<{}, AppState>): void
 }
 
-type Commands = Map<string, Command>
-
-export { AppState, InputManagerState, ListElementProps, Command, Commands }
+export type Commands = Map<string, Command>

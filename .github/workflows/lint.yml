@@ -22,4 +22,4 @@ jobs:
               uses: creyD/prettier_action@v4.2
               with:
                   commit_message: 'style(prettier): fix linting'
-                  prettier_options: --config ./prettierrc.json --write **/*.{js,md,ts,tsx,json,yml}
+                  prettier_options: --config ./.prettierrc.json --write **/*.{js,md,ts,tsx,json,yml,scss,css}

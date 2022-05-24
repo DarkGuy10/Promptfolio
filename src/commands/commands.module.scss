@@ -1,5 +1,3 @@
-@use './../base';
-
 .infoWrapper {
 	padding: 15px 5px;
 }
@@ -41,14 +39,14 @@
 		content: '';
 		flex: 1 1 auto;
 		height: 1px;
-		background-color: base.$medium;
+		background-color: var(--medium);
 		border-radius: 1px;
 		margin: 0 4px;
 	}
 
 	i {
 		font-size: 1.7em;
-		color: base.$medium;
+		color: var(--medium);
 	}
 }
 
@@ -105,7 +103,7 @@
 			content: '';
 			flex: 1 1 auto;
 			height: 1px;
-			background-color: base.$medium;
+			background-color: var(--medium);
 			border-radius: 1px;
 			margin: 0 4px;
 		}

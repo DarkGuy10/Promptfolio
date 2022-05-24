@@ -1,5 +1,3 @@
-@use './../base';
-
 .wrapper {
 	position: fixed;
 	top: 0;
@@ -9,11 +7,11 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: base.$background;
+	background-color: var(--background);
 }
 
 .window {
-	background-color: base.$darkest;
+	background-color: var(--darkest);
 	margin-top: auto;
 	margin-bottom: auto;
 	height: calc(100vh - 10px);
@@ -39,14 +37,14 @@
 
 .titleBar {
 	position: relative;
-	background-color: base.$dark;
+	background-color: var(--dark);
 	border-radius: var(--round-border-radius) var(--round-border-radius) 0 0;
 	display: flex;
 	flex: 0 0;
 	align-items: center;
-	color: base.$muted;
+	color: var(--muted);
 	font-size: var(--font-size-header);
-	font-family: base.$font-normal;
+	font-family: var(--font-normal);
 	font-weight: 900;
 	padding: 7px 10px;
 	user-select: none;
@@ -67,9 +65,9 @@
 }
 
 $dots: (
-	'1': base.$red,
-	'2': base.$yellow,
-	'3': base.$green,
+	'1': var(--red),
+	'2': var(--yellow),
+	'3': var(--green),
 );
 
 @each $x, $color in $dots {
@@ -93,9 +91,9 @@ $dots: (
 	flex: 1 1;
 	overflow: hidden scroll;
 
-	font-family: base.$font-code;
+	font-family: var(--font-code);
 	font-size: var(--font-size-regular);
-	color: base.$light;
+	color: var(--light);
 	line-height: 1.4em;
 
 	scrollbar-color: transparent transparent;
@@ -105,7 +103,7 @@ $dots: (
 	transition-delay: 0.75s;
 
 	&:hover {
-		scrollbar-color: base.$scrollbar-color-thumb transparent;
+		scrollbar-color: var(--scrollbar-color-thumb) transparent;
 		transition-delay: 0s;
 		transition-duration: 0;
 	}
@@ -117,7 +115,7 @@ $dots: (
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: base.$scrollbar-color-thumb;
+		background-color: var(--scrollbar-color-thumb);
 		border-radius: 0.5em;
 	}
 
@@ -127,19 +125,19 @@ $dots: (
 }
 
 .promptPrefix span:nth-of-type(1) {
-	color: base.$blue;
+	color: var(--blue);
 }
 
 .promptPrefix span:nth-of-type(2) {
-	color: base.$light-yellow;
+	color: var(--light-yellow);
 }
 
 .validCommand {
-	color: base.$green !important;
+	color: var(--green) !important;
 }
 
 .invalidCommand {
-	color: base.$red !important;
+	color: var(--red) !important;
 }
 
 /* Responsive code */

@@ -32,12 +32,14 @@ const links = [
 		icon: 'fab fa-fw fa-discord',
 		description: `${discord_usertag} | Add me as friend!`,
 	},
+/*
 	{
 		name: 'E-mail',
 		icon: 'fas fa-fw fa-at',
 		link: `mailto:${email}`,
 		description: 'Lets get in touch!',
 	},
+*/
 ]
 
 const info = (

@@ -1,6 +1,5 @@
-name: Linting
+name: Lint
 
-# This action works with pull requests and pushes
 on:
     pull_request:
     push:
@@ -12,14 +11,22 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v2
-              with:
-                  # Make sure the actual branch is checked out when running on pull requests
-                  ref: ${{ github.head_ref }}
-
-              # uses https://github.com/marketplace/actions/prettier-action
+              uses: actions/checkout@v3
             - name: Prettify code
-              uses: creyD/prettier_action@v4.2
+              uses: creyD/prettier_action@v4.3
               with:
-                  commit_message: 'style(prettier): fix linting'
-                  prettier_options: --config ./.prettierrc.json --write **/*.{js,md,ts,tsx,json,yml,scss,css,html}
+                  prettier_options: -c .
+    eslint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18.x'
+                  cache: 'yarn'
+            - name: Install dependencies
+              run: yarn
+            - name: Run ESLint
+              run: yarn lint
